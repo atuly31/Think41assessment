@@ -3,12 +3,17 @@ import './App.css';
 import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
 import ProducList from "./Components/ProducList";
 import ProductDetail from "./Components/ProductDetails";
+import DepartmentList from "./Components/DepartmentList";
 function App() {
   return (
     <Router>
       <Routes>
         <Route path ="/" element={<ProducList/>}></Route>
         <Route path ="/product/:id" element={<ProductDetail/>}></Route>
+          <Route path ="/departments" element={<DepartmentList/>}></Route>
+          <Route path ="/department/:id" element={<ProductDetail/>}></Route>
+
+
 
       </Routes>
 
