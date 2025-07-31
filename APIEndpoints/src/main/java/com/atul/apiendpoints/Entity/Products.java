@@ -1,9 +1,6 @@
 package com.atul.apiendpoints.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -33,8 +30,9 @@ public class Products {
 
 
 
-    @Column(name = "department", length = 50)
-    private String department;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "department_id")
+    private Department department;
 
     @Column(name = "sku", length = 50)
     private String sku;
@@ -79,13 +77,6 @@ public class Products {
     }
 
 
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
 
     public String getSku() {
         return sku;
