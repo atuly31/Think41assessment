@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { fetchDepartmentById, fetchProductsByDepartmentId } from '../services/departmentService';
+import {fetchPrductByDepartmentId} from "../services/Department";
+import {fetchProductsByDepartmentId,fetchDepartmentById} from "../services/Department";
 import { Link, useParams } from 'react-router-dom';
 
 const DepartmentProducts = () => {

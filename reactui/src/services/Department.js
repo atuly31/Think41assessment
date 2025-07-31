@@ -9,7 +9,7 @@ export const fetchDepartmentById = (id) => {
     return axios.get(`${URL}/${id}`);
 }
 
-export const fetchPrductByDepartmentId = (id) => {
+export const fetchProductsByDepartmentId = (id) => {
     return axios.get(`${URL}/${id}/products`);
 }
 
