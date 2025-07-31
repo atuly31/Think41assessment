@@ -21,14 +21,15 @@ public class DepartmentService {
     public List<Department> getAllDepartment() {
         return departmentRepository.findAll();
     }
-    public Department getDepartmentById(Long id) {
+    public Department getDepartmentById(Integer id) {
         return departmentRepository.findById(id)
                 .orElseThrow(
                         () -> new ResourceNotFoundExpection("Department with id: " + id + " not found!"));
 
     }
-    public List<Products> getProductsByDepartmentId(Long id) {
+    public List<Products> getProductsByDepartmentId(Integer id) {
         Department department = getDepartmentById(id);
         return productRepository.findByDepartment(department);
+
     }
 }

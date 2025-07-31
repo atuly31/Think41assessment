@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/department")
 public class DepartmentController {
@@ -18,13 +19,13 @@ public class DepartmentController {
     public ResponseEntity<List<Department>> getAllDepartments() {
         return ResponseEntity.ok(departmentService.getAllDepartment());
     }
-    @GetMapping({"/id"})
-    public ResponseEntity<Department> getDepartmentsById(@PathVariable Long id) {
+    @GetMapping({"/{id}"})
+    public ResponseEntity<Department> getDepartmentsById(@PathVariable Integer id) {
         return ResponseEntity.ok(departmentService.getDepartmentById(id));
     }
 
     @GetMapping("/{id}/products")
-    public ResponseEntity<List<Products>> getProductByDepartmentsId(@PathVariable Long id) {
+    public ResponseEntity<List<Products>> getProductByDepartmentsId(@PathVariable Integer id) {
         return ResponseEntity.ok(departmentService.getProductsByDepartmentId(id));
     }
 
